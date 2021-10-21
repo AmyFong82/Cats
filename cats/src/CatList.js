@@ -8,7 +8,10 @@ export default class CatList extends Component {
 
 	render(){
 		return(
-				<div>{this.catList}</div>
+				<div>
+					<h1>Cat List</h1>
+					{this.catList}
+				</div>
 			)
 	}
 }

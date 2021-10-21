@@ -1,11 +1,15 @@
 import './App.css';
 import CatList from './CatList';
+import DogList from './DogList';
 
 
 function App() {
   return (
-    <CatList />
-    <DogList />
+    <div>
+      <CatList />
+      <DogList />
+    </div>
+
   );
 }
 
