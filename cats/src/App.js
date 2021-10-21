@@ -5,6 +5,7 @@ import CatList from './CatList';
 function App() {
   return (
     <CatList />
+    <DogList />
   );
 }
 
