@@ -1,17 +1,17 @@
 export const cats = [
 	{id: 1,
-		name: A
-	}
+		name: "A"
+	},
 	{id: 2,
-		name: B
-	}
+		name: "B"
+	},
 	{id: 3,
-		name: C
-	}
+		name: "C"
+	},
 	{id: 4,
-		name: D
-	}
+		name: "D"
+	},
 	{id: 5,
-		name: E
+		name: "E"
 	}
 ]
