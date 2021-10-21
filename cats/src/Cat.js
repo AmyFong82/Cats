@@ -5,10 +5,15 @@ export default class Cat extends Component {
 		like: 0
 	}
 
+	handleClick = () => {
+		this.setState((prevState) => {
+			return {like: prevState.like + 1}
+		})
+	}
 
 	render(){
 		return(
-			<p>{this.props.cat.name} <button>{this.state.like}</button></p>
+			<p>{this.props.cat.name} <button onClick={this.handleClick}>{this.state.like}</button></p>
 		)
 	}
 }
