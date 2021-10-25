@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import DragonList from './DragonList';
 
 export default class Dragon extends Component {
   state={
@@ -14,7 +13,7 @@ export default class Dragon extends Component {
 
   render(){
     return(
-      <li key={this.key}>Name: {this.dragon.name}<button onClick={this.handleClick}>{this.state.like}</button></li>
+      <li key={this.props.key}>Name: {this.props.dragon.name}<button onClick={this.handleClick}>{this.state.like}</button></li>
     )
   }
 }
