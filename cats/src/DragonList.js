@@ -9,6 +9,7 @@ export default class DragonList extends Component {
     return(
       <div>
         <h1>Dragon List</h1>
+        <button>Boys Only</button> <button>Girls Only</button>
         {this.dragonList}
       </div>
     )
