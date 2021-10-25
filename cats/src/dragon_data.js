@@ -1,16 +1,16 @@
 export const dragons = [
   {id: 1,
   name: "AD",
-  gender: "boy"}
+  gender: "boy"},
     {id: 2,
   name: "BD",
-  gender: "boy"}
+  gender: "boy"},
     {id: 3,
   name: "CD",
-  gender: "girl"}
+  gender: "girl"},
     {id: 4,
   name: "DD",
-  gender: "girl"}
+  gender: "girl"},
     {id: 5,
   name: "ED",
   gender: "boy"}
