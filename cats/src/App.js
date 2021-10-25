@@ -2,6 +2,7 @@ import './App.css';
 import CatList from './CatList';
 import DogList from './DogList';
 import PenguinList from './PenguinList';
+import DragonList from './DragonList';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
       <CatList />
       <DogList />
       <PenguinList />
+      <DragonList />
     </div>
 
   );
