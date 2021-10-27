@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 import {dogs} from './dog_data';
 import Dog from './Dog'
-import BreedButton from './BreedButton'
 
 export default class DogList extends Component {
+  state = {
+    doglist: dogs
+  }
 
-  doglist = dogs.map(dog => <Dog key={dog.id} dog={dog} />)
-  const Breeds = [...new Set(dogs.map(dog => dog.breed))];
-  filters = Breeds.map((breed, index) => <BreedButton key=index breed ={breed} />)
+  doglist = () => this.state.doglist.map(dog => <Dog key={dog.id} dog={dog}/>)
+
+  showGermanShepherd = () => {
+    this.setState({doglist: dogs.filter(dog => dog.breed === "German Shepherd")})
+  }
+
+  showAll = () => {
+    this.setState({doglist: dogs})
+  }
 
   render(){
     return(
       <div>
         <h1>Dog List</h1>
-        {this.filters}
-        {this.doglist}
+        <button onClick={this.showGermanShepherd}>German Shepherd</button>
+        <button onClick={this.showAll}>Show All</button>
+        {this.doglist()}
       </div>
       
     )
