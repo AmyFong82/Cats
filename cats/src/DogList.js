@@ -17,12 +17,19 @@ export default class DogList extends Component {
     this.setState({doglist: dogs})
   }
 
+  sortAge = () => {
+    const allDogs = this.state.doglist
+    allDogs.sort((a, b) => a.age - b.age)
+    this.setState({doglist: allDogs})
+  }
+
   render(){
     return(
       <div>
         <h1>Dog List</h1>
         <button onClick={this.showGermanShepherd}>German Shepherd</button>
         <button onClick={this.showAll}>Show All</button>
+        <button onClick={this.sortAge}>Sort By Age</button>
         {this.doglist()}
       </div>
       
