@@ -1,17 +1,27 @@
 export const cats = [
 	{id: 1,
-		name: "A"
+		name: "A",
+		age: 1,
+		sex: "M",
 	},
 	{id: 2,
-		name: "B"
+		name: "B",
+		age: 4,
+		sex: "F",
 	},
 	{id: 3,
-		name: "C"
+		name: "C",
+		age: 7,
+		sex: "F",
 	},
 	{id: 4,
-		name: "D"
+		name: "D",
+		age: 2,
+		sex: "M",
 	},
 	{id: 5,
-		name: "E"
+		name: "E",
+		age: 6,
+		sex: "F",
 	}
 ]

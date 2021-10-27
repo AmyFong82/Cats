@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class Cat extends Component {
 	state = {
-		like: 0
+		like: 0,
+		show: true
 	}
 
 	handleClick = () => {
