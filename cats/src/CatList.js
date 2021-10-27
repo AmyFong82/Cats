@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { cats } from './data';
+import { cats } from './cat_data';
 import Cat from './Cat';
 
 export default class CatList extends Component {
