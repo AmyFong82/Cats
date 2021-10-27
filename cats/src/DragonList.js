@@ -4,10 +4,15 @@ import Dragon from './Dragon'
 
 export default class DragonList extends Component {
   state = {
-    dragons: dragons
+    boyDragons: dragons.filter(dragon => dragon.gender === "boy"),
+    girlDragons: dragons.filter(dragon => dragon.gender === "girl"),
+    filter: "all"
   }
 
-  dragonList = () => this.state.dragons.map(dragon => <Dragon key={dragon.id} dragon={dragon} />)
+  allDragonList = () => {
+    const allDragons = [...this.state.boyDragons, ...this.state.girlDragons]
+    return allDragons.map(dragon => <Dragon key={dragon.id} dragon={dragon} />)
+  }
 
 
   showBoys = () => {
@@ -25,6 +30,16 @@ export default class DragonList extends Component {
 
   showAll = () => {
     this.setState({dragons: dragons})
+  }
+
+  dragonList = () => {
+    if(this.state.filter === "all"){
+      return this.allDragonList()
+    }else if(this.state.filter === "boys"){
+      this.showBoys()
+    }else{
+      this.showGirls()
+    }
   }
 
   render(){
