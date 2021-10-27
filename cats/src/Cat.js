@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 export default class Cat extends Component {
 	state = {
 		like: 0,
-		show: true
 	}
 
 	handleClick = () => {
@@ -14,7 +13,7 @@ export default class Cat extends Component {
 
 	render(){
 		return(
-			<p>{this.props.cat.name}, Sex: {this.props.cat.sex}, Age: {this.props.cat.age} <button onClick={this.handleClick}>{this.state.like}</button></p>
+			<p className={this.props.cat.sex}>{this.props.cat.name}, Sex: {this.props.cat.sex}, Age: {this.props.cat.age} <button onClick={this.handleClick}>{this.state.like}</button></p>
 		)
 	}
 }
