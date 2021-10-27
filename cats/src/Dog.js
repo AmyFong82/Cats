@@ -13,7 +13,7 @@ export default class Dog extends Component {
 
   render(){
     return(
-      <p>{this.props.dog.name}, {this.props.dog.breed} <button onClick={this.handleClick}>Like {this.state.like}</button></p>
+      <p>{this.props.dog.name}, {this.props.dog.breed}, Age: {this.props.dog.age} <button onClick={this.handleClick}>Like {this.state.like}</button></p>
     )
   }
 }
