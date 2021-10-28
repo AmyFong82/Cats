@@ -4,25 +4,25 @@ import Cat from './Cat';
 
 export default class CatList extends Component {
 	state = {
-		show: ""
+		show: "a"
 	}
 
 	changeShow = ({target: {value}}) => {
 		return this.setState({show: value})
 	}
 
-	catList = cats.map(cat => <Cat key={cat.id} cat={cat} show={this.state.show}/>)
+	catList = () => cats.map(cat => <Cat key={cat.id} cat={cat} show={this.state.show}/>)
 
 	render(){
 		return(
 				<div>
 					<h1>Cat List</h1>
 					<select name="sex" id="sex" defaultValue="A" onChange={this.changeShow}>
-						<option value="A">All</option>
-						<option value="F">Female</option>
-						<option value="M">Male</option>
+						<option value="a">All</option>
+						<option value="f">Female</option>
+						<option value="m">Male</option>
 					</select>
-					{this.catList}
+					{this.catList()}
 				</div>
 			)
 	}

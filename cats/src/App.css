@@ -36,3 +36,11 @@
     transform: rotate(360deg);
   }
 }
+
+.ma, .fa, .mm, .ff {
+  display: block;
+} 
+
+.mf, .fm {
+  display: none;
+}
