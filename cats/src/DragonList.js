@@ -13,18 +13,6 @@ export default class DragonList extends Component {
     return this.setState({select: value})
   }
 
-
-  // showBoys = () => {
-  //   this.setState({dragons: dragons.filter(dragon => dragon.gender === "boy")})
-  // }
-
-  // showGirls = () => {
-  //   this.setState({dragons: dragons.filter(dragon => dragon.gender === "girl")})
-  // }
-
-  // showAll = () => this.setState({dragons: dragons})
-
-
   render(){
     return(
       <div>
