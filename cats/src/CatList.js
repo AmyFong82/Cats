@@ -17,7 +17,7 @@ export default class CatList extends Component {
 		return(
 				<div>
 					<h1>Cat List</h1>
-					<select name="sex" id="sex" defaultValue="A" onChange={this.changeShow}>
+					<select name="sex" id="sex" onChange={this.changeShow}>
 						<option value="a">All</option>
 						<option value="f">Female</option>
 						<option value="m">Male</option>

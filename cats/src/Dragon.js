@@ -13,7 +13,14 @@ export default class Dragon extends Component {
 
   render(){
     return(
-      <li key={this.key}>Name: {this.props.dragon.name} ({this.props.dragon.gender})<button onClick={this.handleClick}>{this.state.like}</button></li>
+      <>
+        { (this.props.select === "all" || this.props.select === this.props.dragon.gender) &&
+          <p>
+            Name: {this.props.dragon.name} ({this.props.dragon.gender})
+            <button onClick={this.handleClick}>{this.state.like}</button>
+          </p>
+        }
+      </>
     )
   }
 }

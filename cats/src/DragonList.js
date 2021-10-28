@@ -4,30 +4,36 @@ import Dragon from './Dragon'
 
 export default class DragonList extends Component {
   state = {
-    dragons: dragons
+    select: "all"
   }
 
-  dragonList = () => this.state.dragons.map(dragon => <Dragon key={dragon.id} dragon={dragon} />)
+  dragonList = () => dragons.map(dragon => <Dragon key={dragon.id} dragon={dragon} select={this.state.select} />)
 
-
-  showBoys = () => {
-    this.setState({dragons: dragons.filter(dragon => dragon.gender === "boy")})
+  showList = ({target: {value}}) => {
+    return this.setState({select: value})
   }
 
-  showGirls = () => {
-    this.setState({dragons: dragons.filter(dragon => dragon.gender === "girl")})
-  }
 
-  showAll = () => this.setState({dragons: dragons})
+  // showBoys = () => {
+  //   this.setState({dragons: dragons.filter(dragon => dragon.gender === "boy")})
+  // }
+
+  // showGirls = () => {
+  //   this.setState({dragons: dragons.filter(dragon => dragon.gender === "girl")})
+  // }
+
+  // showAll = () => this.setState({dragons: dragons})
 
 
   render(){
     return(
       <div>
         <h1>Dragon List</h1>
-        <button onClick={this.showBoys}>Boys Only</button> 
-        <button onClick={this.showGirls}>Girls Only</button> 
-        <button onClick={this.showAll}>Show All</button>
+        <select name="select" id="select" onChange={this.showList}>
+          <option value="all">All</option>
+          <option value="boy">Boys</option>
+          <option value="girl">Girls</option>
+        </select>
         {this.dragonList()}
       </div>
     )
