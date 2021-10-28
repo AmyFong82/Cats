@@ -14,7 +14,7 @@ export default class Dragon extends Component {
   render(){
     return(
       <>
-        { (this.props.select === "all" || this.props.select === this.props.dragon.gender) &&
+        {(this.props.select === "all" || this.props.select === this.props.dragon.gender) &&
           <p>
             Name: {this.props.dragon.name} ({this.props.dragon.gender})
             <button onClick={this.handleClick}>{this.state.like}</button>
