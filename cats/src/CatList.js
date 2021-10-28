@@ -1,11 +1,16 @@
 import React, {Component} from 'react';
 import { cats } from './cat_data';
 import Cat from './Cat';
+import CatForm from './CatForm'
+import cuid from 'cuid'
 
 export default class CatList extends Component {
 	state = {
 		select: "a",
-		cats: []
+		cats: [],
+		name: "",
+		age: "",
+		sex: ""
 	}
 
 	changeShow = ({target: {value}}) => {
@@ -19,6 +24,18 @@ export default class CatList extends Component {
 		this.setState({cats: sortedCats})
 	}
 
+	handleOnChange = (event) => {
+		this.setState({
+			[event.target.name]: event.target.value
+		})
+	}
+
+	handleOnSubmit = (event) => {
+		event.preventDefault();
+		const newCat = {name: this.state.name, age: this.state.age, sex: this.state.sex}
+		this.setState(prevState => {cats: prevState.cats.push(newCat)})
+	}
+
 	render(){
 		return(
 				<div>
@@ -30,6 +47,7 @@ export default class CatList extends Component {
 					</select>
 					<button onClick={this.sortAge}>Sort By Age</button>
 					{this.catList()}
+					<CatForm name={this.state.name} age={this.state.age} sex={this.state.sex}/>
 				</div>
 			)
 	}
