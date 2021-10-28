@@ -4,14 +4,14 @@ import Cat from './Cat';
 
 export default class CatList extends Component {
 	state = {
-		show: "a"
+		select: "a"
 	}
 
 	changeShow = ({target: {value}}) => {
-		return this.setState({show: value})
+		return this.setState({select: value})
 	}
 
-	catList = () => cats.map(cat => <Cat key={cat.id} cat={cat} show={this.state.show}/>)
+	catList = () => cats.map(cat => <Cat key={cat.id} cat={cat} select={this.state.select}/>)
 
 	render(){
 		return(
