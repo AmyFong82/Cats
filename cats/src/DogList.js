@@ -4,10 +4,10 @@ import Dog from './Dog'
 
 export default class DogList extends Component {
   state = {
-    breeds: []
+    breed: "All"
   }
 
-  doglist = () => dogs.map(dog => <Dog key={dog.id} dog={dog}/>)
+  doglist = () => dogs.map(dog => <Dog key={dog.id} dog={dog} select={this.state.breed}/>)
 
   dogBreeds = () => {
     const breedArray = dogs.map(dog => dog.breed)
@@ -15,8 +15,8 @@ export default class DogList extends Component {
     return uniqueBreeds.map(breed => <option value={breed} key={breed}>{breed}</option>)
   }
 
-  showAll = () => {
-    this.setState({doglist: dogs})
+  handleSelect = ({target: {value}}) => {
+    this.setState({breed: value})
   }
 
   sortAge = () => {
@@ -29,8 +29,8 @@ export default class DogList extends Component {
     return(
       <div>
         <h1>Dog List</h1>
-        <select name="breed" id="breed">
-          <option value="all">All Breeds</option>
+        <select name="breed" id="breed" onChange={this.handleSelect}>
+          <option value="All">All Breeds</option>
           {this.dogBreeds()}
         </select>
         <button onClick={this.sortAge}>Sort By Age</button>
