@@ -4,7 +4,8 @@ import Cat from './Cat';
 
 export default class CatList extends Component {
 	state = {
-		select: "a"
+		select: "a",
+		cats: []
 	}
 
 	changeShow = ({target: {value}}) => {
@@ -12,6 +13,11 @@ export default class CatList extends Component {
 	}
 
 	catList = () => cats.map(cat => <Cat key={cat.id} cat={cat} select={this.state.select}/>)
+
+	sortAge = () => {
+		const sortedCats = cats.sort((a, b) => a.age - b.age)
+		this.setState({cats: sortedCats})
+	}
 
 	render(){
 		return(
@@ -22,6 +28,7 @@ export default class CatList extends Component {
 						<option value="f">Female</option>
 						<option value="m">Male</option>
 					</select>
+					<button onClick={this.sortAge}>Sort By Age</button>
 					{this.catList()}
 				</div>
 			)
