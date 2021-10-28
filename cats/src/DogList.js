@@ -4,7 +4,8 @@ import Dog from './Dog'
 
 export default class DogList extends Component {
   state = {
-    breed: "All"
+    breed: "All",
+    doglist: dogs
   }
 
   doglist = () => dogs.map(dog => <Dog key={dog.id} dog={dog} select={this.state.breed}/>)
@@ -20,9 +21,8 @@ export default class DogList extends Component {
   }
 
   sortAge = () => {
-    const allDogs = this.state.doglist
-    allDogs.sort((a, b) => a.age - b.age)
-    this.setState({doglist: allDogs})
+    const sortedDogs = dogs.sort((a, b) => a.age - b.age)
+    this.setState({doglist: sortedDogs})
   }
 
   render(){
