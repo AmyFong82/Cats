@@ -16,7 +16,7 @@ export default class CatList extends Component {
 	catList = () => this.state.cats.map(cat => <Cat key={cat.id} cat={cat} select={this.state.select}/>)
 
 	sortAge = () => {
-		const sortedCats = cats.sort((a, b) => a.age - b.age)
+		const sortedCats = this.state.cats.sort((a, b) => a.age - b.age)
 		this.setState({cats: sortedCats})
 	}
 
