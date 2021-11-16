@@ -13,7 +13,7 @@ export default class CatList extends Component {
 		return this.setState({select: value})
 	}
 
-	catList = () => cats.map(cat => <Cat key={cat.id} cat={cat} select={this.state.select}/>)
+	catList = () => this.state.cats.map(cat => <Cat key={cat.id} cat={cat} select={this.state.select}/>)
 
 	sortAge = () => {
 		const sortedCats = cats.sort((a, b) => a.age - b.age)
@@ -21,13 +21,11 @@ export default class CatList extends Component {
 	}
 
 	addCat = (newCat) => {
-		console.log(newCat)
-		this.setState(prevState => {
-			return {
-				cats: prevState.cats.concat(newCat) 
-			}
+		this.setState({
+			cats: [...this.state.cats, newCat]
 		})
 	}
+
 
 	render(){
 		return(

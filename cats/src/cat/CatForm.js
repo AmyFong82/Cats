@@ -27,7 +27,6 @@ export default class CatFrom extends Component {
 				id: cuid()
 			}
 		)
-		console.log(this.state)
 	}
 
 	render(){
