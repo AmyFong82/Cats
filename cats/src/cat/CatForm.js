@@ -16,7 +16,7 @@ export default class CatFrom extends Component {
 	render(){
 		return(
 			<div>
-				<form onSubmit={this.props.handleOnSubmit}>
+				<form onSubmit={event => this.props.handleOnSubmit(event)}>
 					<h3>Add New Cat:</h3>
 					Name:
 					<input type="text" name="name" value={this.name} onChange={event => this.handleOnChange(event)} />
@@ -24,7 +24,7 @@ export default class CatFrom extends Component {
 					<input type="text" name="age" value={this.age} onChange={event => this.handleOnChange(event)} />
 					Sex:
 					<input type="text" name="sex" value={this.sex} onChange={event => this.handleOnChange(event)} />
-					<button>Submit</button>
+					<button type="submit">Submit</button>
 				</form>
 			</div>
 		)
