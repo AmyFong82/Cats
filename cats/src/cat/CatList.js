@@ -23,9 +23,9 @@ export default class CatList extends Component {
 	addCat = (newCat) => {
 		console.log(newCat)
 		this.setState(prevState => {
-			return ({
+			return {
 				cats: prevState.cats.concat(newCat) 
-			})
+			}
 		})
 	}
 
