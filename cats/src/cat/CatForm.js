@@ -19,7 +19,7 @@ export default class CatFrom extends Component {
 		event.preventDefault()
 		const newCat = this.state
 		console.log(newCat)
-		// this.props.addCat()
+		this.props.addCat(newCat)
 	}
 
 	render(){

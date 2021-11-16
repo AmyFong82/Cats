@@ -20,8 +20,13 @@ export default class CatList extends Component {
 		this.setState({cats: sortedCats})
 	}
 
-	addCat = () => {
-		// console.log(this.state.cats)
+	addCat = (newCat) => {
+		console.log(newCat)
+		this.setState(prevState => {
+			return ({
+				cats: prevState.cats.concat(newCat) 
+			})
+		})
 	}
 
 	render(){
@@ -35,7 +40,7 @@ export default class CatList extends Component {
 					</select>
 					<button onClick={this.sortAge}>Sort By Age</button>
 					{this.catList()}
-					<CatForm addCat={this.addCat()}/>
+					<CatForm addCat={this.addCat}/>
 				</div>
 			)
 	}
