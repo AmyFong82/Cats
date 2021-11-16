@@ -1,8 +1,8 @@
 import './App.css';
-import CatList from './CatList';
-import DogList from './DogList';
-import PenguinList from './PenguinList';
-import DragonList from './DragonList';
+import CatList from './cat/CatList';
+import DogList from './dog/DogList';
+import PenguinList from './penguin/PenguinList';
+import DragonList from './dragon/DragonList';
 
 
 function App() {

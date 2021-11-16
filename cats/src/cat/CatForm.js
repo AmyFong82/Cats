@@ -1,10 +1,12 @@
 import React, {Component} from 'react'
+import cuid from 'cuid'
 
 export default class CatFrom extends Component {
 	state = {
 		name: "",
 		age: "",
-		sex: ""
+		sex: "",
+		id: cuid()
 	}
 
 	handleOnChange = (event) => {
@@ -13,10 +15,17 @@ export default class CatFrom extends Component {
 		})
 	}
 
+	handleOnSubmit = (event) => {
+		event.preventDefault()
+		const newCat = this.state
+		console.log(newCat)
+		// this.props.addCat()
+	}
+
 	render(){
 		return(
 			<div>
-				<form onSubmit={event => this.props.handleOnSubmit(event)}>
+				<form onSubmit={event => this.handleOnSubmit(event)}>
 					<h3>Add New Cat:</h3>
 					Name:
 					<input type="text" name="name" value={this.name} onChange={event => this.handleOnChange(event)} />
