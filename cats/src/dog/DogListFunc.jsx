@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import { dogs } from './dogs_data'
 
-export function Doglist {
+export function DoglistFunc() {
 
   const doglist = dogs.map(dog => <li key={dog.id)>Name: {dog.name}, Age: {dog.age}, Sex: {dog.sex}</li>
 
